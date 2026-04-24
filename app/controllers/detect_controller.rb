@@ -1,5 +1,6 @@
 class DetectController < ApplicationController
   def create
+    track_usage("detect")
     input = params[:data]
 
     detected = detect_pii(input)
