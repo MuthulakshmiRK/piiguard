@@ -1,5 +1,5 @@
 class ApiKey < ApplicationRecord
-  before_create :generate_token
+	before_validation :generate_token, on: :create
 
 	validates :token, presence: true, uniqueness: true
 
