@@ -116,7 +116,7 @@ Authorization: Bearer <API_KEY>
 ### Setup
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/MuthulakshmiRK/piiguard.git
 cd piiguard
 
 bundle install

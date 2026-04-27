@@ -34,7 +34,7 @@ class ApplicationController < ActionController::API
                       .order(:created_at)
                       .first
 
-		retry_after = (oldest_request.created_at + window - Time.now).ceil
+		retry_after = (oldest_request.created_at + window - Time.now).ceil if oldest_request.present?
 
 		if count >= limit
 			render json: { error: "Rate limit exceeded", retry_after_seconds: retry_after }, status: :too_many_requests
